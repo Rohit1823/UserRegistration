@@ -94,5 +94,22 @@ namespace UserRegistration
             }
 
         }
+        public string Password()
+        {
+            
+            string password;
+            Console.WriteLine("enter password  \n :: Rule1: minimum 8 Characters");
+            password = Console.ReadLine();
+            
+            if (password.Length >= 8)
+            {    
+                return password;
+            }
+            else
+            {
+                Console.WriteLine("invalid input ");
+                return null;
+            }
+        }
     }
 }

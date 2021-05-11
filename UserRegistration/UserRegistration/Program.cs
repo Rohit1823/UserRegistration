@@ -10,18 +10,23 @@ namespace UserRegistration
     {
         static void Main(string[] args)
         {
-            string first_name;
             Console.WriteLine("Welcome To User Registration !");
 
+            string first_name = null;
+            string last_name = null;
+           
             UserRegistration obj_userregistaration = new UserRegistration();
 
 
-            first_name = obj_userregistaration.FristName();
-            if (first_name is null)
+            while (first_name is null)
                 first_name = obj_userregistaration.FristName();
 
+            while (last_name is null)
+                last_name = obj_userregistaration.LastName();
 
-            Console.WriteLine("first name  : " + first_name);
+
+            Console.WriteLine("First name  : " + first_name);
+            Console.WriteLine("Last name  : " + last_name);
         }
     }
 }

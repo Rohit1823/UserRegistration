@@ -103,15 +103,22 @@ namespace UserRegistration
 
             string rule2 = "[A-Z]{1,}";
             string rule3 = "[0-9]{1,}";
+            string rule4a = "[\\W]{1,}";
+            string rule4b = "[\\W]{2,}";
 
             Regex re_password_r2 = new Regex(rule2);
             Regex re_password_r3 = new Regex(rule3);
+            Regex re_password_r4a = new Regex(rule4a);
+            Regex re_password_r4b = new Regex(rule4b);
 
             if (password.Length >= 8)
             {
-                if (re_password_r2.IsMatch(password) && re_password_r3.IsMatch(password))
+                if (re_password_r2.IsMatch(password) && re_password_r3.IsMatch(password) && re_password_r4a.IsMatch(password))
                 {
-                    return password;
+                    if (re_password_r4b.IsMatch(password))
+                        return null;
+                    else
+                        return password;
                 }
                 else
                 {

@@ -51,5 +51,26 @@ namespace UserRegistration
                 return null;
             }
         }
+        public string Email()
+        {
+            
+            string email;
+            Console.WriteLine("Enter Last email id \n  :: email E.g :- abc.xyz@bl.com ");
+            email = Console.ReadLine();
+           
+            string exp = "^[a-zA-Z0-9]*@[a-zA-Z0-9]*.[a-zA-Z0-9]{2,4}$";
+            
+            Regex re_email = new Regex(exp);
+            
+            if (re_email.IsMatch(email))
+            {
+                return email;
+            }
+            else
+            {
+                Console.WriteLine("invalid input ");
+                return null;
+            }
+        }
     }
 }

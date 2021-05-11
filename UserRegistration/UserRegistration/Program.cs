@@ -14,7 +14,8 @@ namespace UserRegistration
 
             string first_name = null;
             string last_name = null;
-           
+            string email = null;
+
             UserRegistration obj_userregistaration = new UserRegistration();
 
 
@@ -24,9 +25,12 @@ namespace UserRegistration
             while (last_name is null)
                 last_name = obj_userregistaration.LastName();
 
+            while (email is null)
+                email = obj_userregistaration.Email();
 
             Console.WriteLine("First name  : " + first_name);
             Console.WriteLine("Last name  : " + last_name);
+            Console.WriteLine("Email  : " + email);
         }
     }
 }

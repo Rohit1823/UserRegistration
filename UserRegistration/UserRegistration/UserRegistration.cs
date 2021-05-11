@@ -72,5 +72,27 @@ namespace UserRegistration
                 return null;
             }
         }
+        public string PhoneNumber()
+        {
+            
+            string phone_number;
+            Console.WriteLine("Enter  phone number \n  :: E.g -- 91 9919819801 - Country code follow by space and 10 digit number ");
+            phone_number = Console.ReadLine();
+            
+            string exp = "^[0-9]{2} [0-9]{10}$";
+            
+            Regex re_phonenumber = new Regex(exp);
+            
+            if (re_phonenumber.IsMatch(phone_number))
+            {
+                return phone_number;
+            }
+            else
+            {
+                Console.WriteLine("invalid input ");
+                return null;
+            }
+
+        }
     }
 }

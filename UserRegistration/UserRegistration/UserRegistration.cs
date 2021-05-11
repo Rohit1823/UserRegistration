@@ -102,11 +102,14 @@ namespace UserRegistration
             password = Console.ReadLine();
 
             string rule2 = "[A-Z]{1,}";
-            Regex re_password = new Regex(rule2);
+            string rule3 = "[0-9]{1,}";
+
+            Regex re_password_r2 = new Regex(rule2);
+            Regex re_password_r3 = new Regex(rule3);
 
             if (password.Length >= 8)
             {
-                if (re_password.IsMatch(password))
+                if (re_password_r2.IsMatch(password) && re_password_r3.IsMatch(password))
                 {
                     return password;
                 }
